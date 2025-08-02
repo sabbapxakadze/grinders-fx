@@ -3,6 +3,7 @@ import About from "@/components/About";
 import Pricing from "@/components/Pricing";
 import Contact from "@/components/Contact";
 import CryptoDashboard from "@/components/CryptoDashboard";
+import Testimonials from "@/components/Testimonials";
 import Navigation from "@/components/Navigation";
 
 const Index = () => {
@@ -13,6 +14,7 @@ const Index = () => {
       <About />
       <Pricing />
       <CryptoDashboard />
+      <Testimonials />
       <Contact />
     </div>
   );

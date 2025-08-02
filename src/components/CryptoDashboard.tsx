@@ -97,37 +97,48 @@ const CryptoDashboard = () => {
           </p>
         </div>
 
-        {/* Live Coin Prices */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          {coinData.map((coin) => {
-            const coinPrice = coins[coin.id];
-            const price = coinPrice?.usd || 0;
-            const change = coinPrice?.usd_24h_change || 0;
-            const isPositive = change > 0;
+        {/* Live Coin Prices - List View */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle className="text-xl">Live Cryptocurrency Prices</CardTitle>
+            <CardDescription>Real-time market data updated every 30 seconds</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              {coinData.map((coin) => {
+                const coinPrice = coins[coin.id];
+                const price = coinPrice?.usd || 0;
+                const change = coinPrice?.usd_24h_change || 0;
+                const isPositive = change > 0;
 
-            return (
-              <Card key={coin.id}>
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium flex items-center gap-2">
-                    <span>{coin.symbol}</span>
-                    {coin.name}
-                  </CardTitle>
-                  {isPositive ? (
-                    <TrendingUp className="h-4 w-4 text-success" />
-                  ) : (
-                    <TrendingDown className="h-4 w-4 text-destructive" />
-                  )}
-                </CardHeader>
-                <CardContent>
-                  <div className="text-2xl font-bold">{formatPrice(price)}</div>
-                  <p className={`text-xs ${isPositive ? 'text-success' : 'text-destructive'}`}>
-                    {isPositive ? '+' : ''}{change.toFixed(2)}% (24h)
-                  </p>
-                </CardContent>
-              </Card>
-            );
-          })}
-        </div>
+                return (
+                  <div key={coin.id} className="flex items-center justify-between p-4 rounded-lg bg-muted/30 border">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <span className="text-lg">{coin.symbol}</span>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold">{coin.name}</h3>
+                        <p className="text-sm text-muted-foreground">{coin.id.toUpperCase()}</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-xl font-bold">{formatPrice(price)}</div>
+                      <div className={`flex items-center gap-1 text-sm ${isPositive ? 'text-success' : 'text-destructive'}`}>
+                        {isPositive ? (
+                          <TrendingUp className="h-3 w-3" />
+                        ) : (
+                          <TrendingDown className="h-3 w-3" />
+                        )}
+                        {isPositive ? '+' : ''}{change.toFixed(2)}% (24h)
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </CardContent>
+        </Card>
 
         {/* TradingView Chart */}
         <CryptoChart />

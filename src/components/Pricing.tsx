@@ -20,20 +20,6 @@ const Pricing = () => {
       popular: false
     },
     {
-      name: "VIP Signal Group",
-      price: "$100",
-      period: "month",
-      description: "Exclusive Telegram VIP signals",
-      features: [
-        "Premium FX Signals",
-        "VIP Telegram Group",
-        "Instant Signal Alerts",
-        "Market Analysis",
-        "24/7 Support"
-      ],
-      popular: false
-    },
-    {
       name: "3 Months Access",
       price: "$387",
       period: "3 months",
@@ -51,6 +37,20 @@ const Pricing = () => {
         "Advanced Strategies"
       ],
       popular: true
+    },
+    {
+      name: "VIP Signal Group",
+      price: "$100",
+      period: "month",
+      description: "Exclusive Telegram VIP signals",
+      features: [
+        "Premium FX Signals",
+        "VIP Telegram Group",
+        "Instant Signal Alerts",
+        "Market Analysis",
+        "24/7 Support"
+      ],
+      popular: false
     }
   ];
 
