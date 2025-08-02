@@ -20,6 +20,20 @@ const Pricing = () => {
       popular: false
     },
     {
+      name: "VIP Signal Group",
+      price: "$100",
+      period: "month",
+      description: "Exclusive Telegram VIP signals",
+      features: [
+        "Premium FX Signals",
+        "VIP Telegram Group",
+        "Instant Signal Alerts",
+        "Market Analysis",
+        "24/7 Support"
+      ],
+      popular: false
+    },
+    {
       name: "3 Months Access",
       price: "$387",
       period: "3 months",
@@ -54,7 +68,7 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
             <Card key={index} className={`relative ${plan.popular ? 'ring-2 ring-primary' : ''}`}>
               {plan.popular && (

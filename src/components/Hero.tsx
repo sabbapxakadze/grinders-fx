@@ -6,7 +6,7 @@ const Hero = () => {
     <section id="home" className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 mt-8">
             <span className="text-foreground">Master FX Trading with</span>
             <br />
             <span className="text-primary">Grinders FX</span>
